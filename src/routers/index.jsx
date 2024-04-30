@@ -6,6 +6,8 @@ import About from "../pages/About";
 
 import ErrorPage from "../component/ErrorPage";
 import Rooms from "../pages/Rooms";
+import Signin from "../pages/auth/Signin";
+import Register from "../pages/auth/Register";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/auth/signin",
+        element: <Signin />,
+      },
+      {
+        path: "/auth/signup",
+        element: <Register />,
       },
     ],
   },
