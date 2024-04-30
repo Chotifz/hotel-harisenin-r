@@ -39,7 +39,7 @@ export default function Navbar() {
                 <Link to="/about">About</Link>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </div>
@@ -51,19 +51,21 @@ export default function Navbar() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">Rooms</a>
+              <Link to="/rooms">Rooms</Link>
             </li>
             <li className="dropdown dropdown-hover">
               <Link to="/services">Services</Link>
               <ul className="dropdown-content z-[1] mt-4 p-2 pt-0 bg-slate-100 border shadow pr-16">
                 <li>
-                  <a href="#">Restaurant</a>
+                  <Link to="/services/restaurant">Restaurant</Link>
                 </li>
                 <li>
-                  <a href="#">Service included</a>
+                  <Link to="/services/service-inclueded">Service included</Link>
                 </li>
                 <li>
-                  <a href="#">Service on request</a>
+                  <Link to="/services/service-on-request">
+                    Service on request
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -71,14 +73,17 @@ export default function Navbar() {
               <Link to="/about">About</Link>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn px-8 bg-blue-600 text-white hover:bg-orange-200 border-none">
+          <Link
+            to="/login"
+            className="btn px-8 bg-blue-600 text-white hover:bg-orange-200 border-none"
+          >
             Login
-          </a>
+          </Link>
         </div>
       </div>
     </div>
