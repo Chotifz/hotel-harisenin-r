@@ -8,6 +8,7 @@ import ErrorPage from "../component/ErrorPage";
 import Rooms from "../pages/Rooms";
 import Signin from "../pages/auth/Signin";
 import Register from "../pages/auth/Register";
+import Contact from "../pages/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
       {
         path: "/auth/signin",
