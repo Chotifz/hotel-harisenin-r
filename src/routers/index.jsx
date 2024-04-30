@@ -5,6 +5,7 @@ import Services from "../pages/services";
 import About from "../pages/About";
 
 import ErrorPage from "../component/ErrorPage";
+import Rooms from "../pages/Rooms";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/rooms",
+        element: <Rooms />,
       },
       {
         path: "/services",

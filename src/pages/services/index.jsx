@@ -9,7 +9,10 @@ export default function Services() {
   return (
     <>
       <div className="hero bg-img-services">
-        <HeroServices />
+        <HeroServices
+          title="Our Services"
+          subtitle="Enhance Your Experience with our premier services"
+        />
       </div>
 
       <div className="hero min-h-[85vh] bg-slate-200 text-black">
