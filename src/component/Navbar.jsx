@@ -79,7 +79,7 @@ export default function Navbar() {
         </div>
         <div className="navbar-end">
           <Link
-            to="/login"
+            to="/auth/signin"
             className="btn px-8 bg-blue-600 text-white hover:bg-orange-200 border-none"
           >
             Login
