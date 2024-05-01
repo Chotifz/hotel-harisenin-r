@@ -3,6 +3,7 @@ import RootLayout from "../layouts/RootLayout";
 import Home from "../pages/Home";
 import Services from "../pages/services";
 import About from "../pages/About";
+import Room from "../pages/Room";
 
 import ErrorPage from "../component/ErrorPage";
 import Rooms from "../pages/Rooms";
