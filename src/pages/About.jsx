@@ -8,13 +8,13 @@ export default function About() {
     <>
       <main>
         <section>
-          <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row">
+          <div className="hero min-h-screen dark:bg-slate-700">
+            <div className="hero-content gap-16 flex-col lg:flex-row">
               <img
                 src={pantaiImg}
                 className="max-w-sm rounded-lg shadow-2xl "
               />
-              <div className="ml-1">
+              <div className="ml-1 text-gray-300">
                 <div className="max-w-md">
                   <h1 className="text-3xl font-bold">About Us</h1>
                   <p className="mt-1 font-normal">

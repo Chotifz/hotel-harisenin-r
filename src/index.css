@@ -5,3 +5,16 @@
 .bg-img-services {
   background-image: url(./assets/images/service/window-003.jpg);
 }
+
+.bg-img-son {
+  background-image: url(./assets/images/service/pway-2.jpg);
+}
+.bg-img-si {
+  background-image: url(./assets/images/service/service-include-bg.jpg);
+}
+.bg-img-res {
+  background-image: url(./assets/images/service/restaurant.jpg);
+}
+.bg-img-hero {
+  background-image: url(./assets/images/hompage/bedrooml.jpg);
+}
