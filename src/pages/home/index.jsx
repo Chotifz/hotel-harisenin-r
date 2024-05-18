@@ -1,44 +1,13 @@
-import widowp from "../../assets/images/hompage/windowp.jpg";
 import Book from "./components/Book";
+import Content from "./components/Content";
 import Hero from "./components/Hero";
 
 export default function Home() {
   return (
-    <>
+    <div className="bg-white">
       <Hero />
       <Book />
-      <div className="w-full flex justify-center pb-24 bg-white">
-        <div className="flex container flex-row ">
-          <div className="flex flex-col bg-white lg:flex-row">
-            <div className="flex w-full flex-col justify-center lg:w-1/2 ">
-              <h1 className=" font-bold text-lg text-black mb-3">
-                WELCOME TO HOTEL HARISENIN
-              </h1>
-              <p className="py-6 font-medium text-base text-slate-500">
-                {" "}
-                Hotel Harisenin, seamlessly blends comfort and luxury, providing
-                guests with an unforgettable stay. Nestled in a prime location
-                with breathtaking views, this hotel offers a serene and lavish
-                retreat. Upon arrival, guests are welcomed by elegant
-                architecture that exudes sophistication and charm. The spacious
-                and opulent lobby sets the tone for a warm and professional
-                reception by the experienced hotel staff. The rooms are
-                tastefully designed with modern amenities to ensure maximum
-                comfort. Each room is adorned with elegant touches and charming
-                details, creating a cozy and inviting atmosphere. Luxurious
-                bedding with high-quality linens guarantees a restful night's
-                sleep.
-              </p>
-            </div>
-            <div className=" flex w-full justify-center lg:w-1/2">
-              <img
-                src={widowp}
-                className="max-w-sm justify-items-center rounded-lg shadow-2xl"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+      <Content />
+    </div>
   );
 }

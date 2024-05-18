@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import HeroServices from "../../component/HeroServices";
+import HeroServices from "./components/HeroServices";
 
 import service1 from "../../assets/images/service/pchel2.jpg";
 import service2 from "../../assets/images/service/category-1.jpg";

@@ -1,8 +1,8 @@
 import React from "react";
-import contactImg from "../assets/images/contact/contact-person.jpg";
-import emailIcon from "../assets/svg/email.svg";
-import telephoneIcon from "../assets/svg/telephone.svg";
-import placeIcon from "../assets/svg/place.svg";
+import contactImg from "../../assets/images/contact/contact-person.jpg";
+import emailIcon from "../../assets/svg/email.svg";
+import telephoneIcon from "../../assets/svg/telephone.svg";
+import placeIcon from "../../assets/svg/place.svg";
 
 export default function Contact() {
   return (
