@@ -1,8 +1,8 @@
-import HeroServices from "../../component/HeroServices";
+import HeroServices from "./components/HeroServices";
 import ImgSon1 from "../../assets/images/service/pchel2.jpg";
 import ImgSon2 from "../../assets/images/service/pexels-pietro-jeng-671956.jpg";
 import ImgSon3 from "../../assets/images/service/pexels-harrison-haines-2869667.jpg";
-import ServiceHead from "../../component/ServiceHead";
+import ServiceHead from "./components/ServiceHead";
 export default function ServicesOnRequest() {
   return (
     <>

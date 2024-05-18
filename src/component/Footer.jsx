@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="footer fixed bottom-0 items-center p-4 bg-slate-700 text-white">
+    <footer className="footer bottom-0 items-center p-4 bg-slate-700 text-white">
       <aside className="items-center grid-flow-col ml-14">
         <p>Copyright © 2024 - All right reserved Hotel Harisenin</p>
       </aside>

@@ -5,27 +5,19 @@ export default function Navbar() {
     <div>
       <div className="navbar bg-slate-100 text-black">
         <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <details className="dropdown">
+            <summary className="m-1 btn btn-circle btn-ghost lg:hidden">
               <svg
+                className="swap-off fill-current"
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+                width="32"
+                height="32"
+                viewBox="0 0 512 512"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
+                <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
               </svg>
-            </div>
-            <ul
-              tabIndex="0"
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-slate-100 rounded-box w-52"
-            >
+            </summary>
+            <ul className="menu dropdown-content mt-3 z-[1] p-2 shadow bg-slate-100 rounded-box w-52">
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -42,7 +34,8 @@ export default function Navbar() {
                 <Link to="/contact">Contact</Link>
               </li>
             </ul>
-          </div>
+          </details>
+
           <a className="btn btn-ghost text-xl">Hotel Harisenin</a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -80,7 +73,7 @@ export default function Navbar() {
         <div className="navbar-end">
           <Link
             to="/auth/signin"
-            className="btn px-8 bg-blue-600 text-white hover:bg-orange-200 border-none"
+            className="btn lg:px-6 lg:h-11 btn-sm h-10 px-5 bg-blue-600 text-white hover:bg-orange-200 border-none"
           >
             Login
           </Link>

@@ -1,5 +1,5 @@
-import HeroServices from "../../component/HeroServices";
-import ServiceHead from "../../component/ServiceHead";
+import HeroServices from "./components/HeroServices";
+import ServiceHead from "./components/ServiceHead";
 import ImgSi1 from "../../assets/images/service/check-in-check-out.jpg";
 import ImgSi2 from "../../assets/images/service/breakfast.jpg";
 import ImgSi3 from "../../assets/images/service/daily-cleaning-room.jpg";
