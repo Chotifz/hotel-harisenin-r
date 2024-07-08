@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CardRoom({ name, description, image }) {
+  const navigate = useNavigate();
+
+  const handleCheckAvailability = () => {
+    navigate("/booking");
+  };
+
   return (
     <>
       <div id="room1" className="flex flex-col">
@@ -13,6 +20,7 @@ export default function CardRoom({ name, description, image }) {
           <button
             id="payment"
             className="bg-slate-800 hover:bg-slate-900 text-white p-3 rounded-lg text-sm font-bold"
+            onClick={handleCheckAvailability}
           >
             Check Availability
           </button>
