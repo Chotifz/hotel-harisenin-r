@@ -6,7 +6,7 @@ export default function Navbar() {
       <div className="navbar bg-slate-100 text-black">
         <div className="navbar-start">
           <details className="dropdown">
-            <summary className="m-1 btn btn-circle btn-ghost lg:hidden">
+            <summary className="m-1 btn btn-circle btn-ghost md:hidden">
               <svg
                 className="swap-off fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@ export default function Navbar() {
                 <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
               </svg>
             </summary>
-            <ul className="menu dropdown-content mt-3 z-[1] p-2 shadow bg-slate-100 rounded-box w-52">
+            <ul className="menu dropdown-content mt-3 z-[1] p-4 shadow bg-slate-100 rounded-box w-80">
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -38,7 +38,7 @@ export default function Navbar() {
 
           <a className="btn btn-ghost text-xl">Hotel Harisenin</a>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden md:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
               <Link to="/">Home</Link>
