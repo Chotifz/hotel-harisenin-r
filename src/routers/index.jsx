@@ -13,7 +13,7 @@ import Bookings from "../pages/rooms/Booking";
 import Contact from "../pages/contact";
 import Signin from "../pages/auth/Signin";
 import Register from "../pages/auth/Register";
-import Booking from "../pages/booking";
+
 import ErrorPage from "../component/ErrorPage";
 
 export const router = createBrowserRouter([
@@ -62,10 +62,7 @@ export const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-      {
-        path: "/booking",
-        element: <Booking />,
-      },
+
       {
         path: "/auth/signin",
         element: <Signin />,

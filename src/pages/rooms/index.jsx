@@ -7,6 +7,8 @@ export default function Rooms() {
   const { data, isLoading, isError } = useFetchRoom();
 
   if (isLoading) return <Skeleton />;
+  if (isError) return <div>Loading Page Error</div>;
+
   return (
     <div className="bg-slate-50">
       <div className="hero bg-img-services">
