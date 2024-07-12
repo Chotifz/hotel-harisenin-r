@@ -1,17 +1,29 @@
 import { axiosInstance } from "./index";
 import { useQuery, useMutation } from "@tanstack/react-query";
 
-const useFetchRoom = () => {
+export const useFetchRoom = () => {
   return useQuery({
+    queryKey: ["rooms"],
     queryFn: async () => {
       const dataResponse = await axiosInstance.get("/rooms");
-      console.log(dataResponse);
-      return dataResponse;
+
+      return dataResponse.data;
     },
   });
 };
 
-const useCreateRoom = ({ onSuccess }) => {
+export const useFetchRoomById = (id) => {
+  return useQuery({
+    queryKey: ["room", id],
+    queryFn: async () => {
+      const dataResponse = await axiosInstance.get(`/rooms/${id}`);
+      console.log(dataResponse.data);
+      return dataResponse.data;
+    },
+  });
+};
+
+export const useCreateRoom = ({ onSuccess }) => {
   return useMutation({
     mutationFn: async (body) => {
       const dataResponse = await axiosInstance.post(`/rooms`, body);
@@ -21,7 +33,7 @@ const useCreateRoom = ({ onSuccess }) => {
   });
 };
 
-const useDeleteRoom = ({ onSuccess }) => {
+export const useDeleteRoom = ({ onSuccess }) => {
   return useMutation({
     mutationFn: async (id) => {
       const dataResponse = await axiosInstance.delete(`/rooms/${id}`);
@@ -31,7 +43,7 @@ const useDeleteRoom = ({ onSuccess }) => {
   });
 };
 
-const useEditRoom = ({ onSuccess }) => {
+export const useEditRoom = ({ onSuccess }) => {
   return useMutation({
     mutationFn: async (id) => {
       const dataResponse = await axiosInstance.patch(`/posts/${id}`);
@@ -40,5 +52,3 @@ const useEditRoom = ({ onSuccess }) => {
     onSuccess,
   });
 };
-
-module.exports = { useFetchRoom, useCreateRoom, useDeleteRoom, useEditRoom };

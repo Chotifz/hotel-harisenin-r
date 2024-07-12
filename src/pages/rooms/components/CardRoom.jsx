@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function CardRoom({ name, description, image }) {
+export default function CardRoom({ id, name, description, image }) {
   const navigate = useNavigate();
 
   const handleCheckAvailability = () => {
-    navigate("/booking");
+    navigate(`/rooms/${id}`);
   };
 
   return (

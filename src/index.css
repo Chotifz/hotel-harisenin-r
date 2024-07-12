@@ -18,3 +18,7 @@
 .bg-img-hero {
   background-image: url(./assets/images/hompage/bedrooml.jpg);
 }
+
+.grayscale {
+  filter: grayscale(100%);
+}

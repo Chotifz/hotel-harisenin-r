@@ -1,7 +1,6 @@
 import Hero from "./components/Hero";
 import CardRoom from "./components/CardRoom";
-
-import { useFetchRoom } from "../../api/rooms";
+import { useFetchRoom } from "../../api/useRooms";
 import { Skeleton } from "./components/Skeleton";
 
 export default function Rooms() {
@@ -21,12 +20,13 @@ export default function Rooms() {
           Explore
         </h1>
         <div className="max-m[70%] h-full flex flex-wrap mx-8 justify-center gap-8 pb-20">
-          {data?.data.map((data, index) => (
+          {data?.data.map((room) => (
             <CardRoom
-              key={index}
-              name={data.name}
-              description={data.description}
-              image={data.image}
+              key={room.id}
+              id={room.id}
+              name={room.name}
+              description={room.description}
+              image={room.image}
             />
           ))}
         </div>
