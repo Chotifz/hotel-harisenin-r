@@ -1,7 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Register() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [register, setRegister] = useState(false);
+
+  const handleSubmit = (e) => {
+    // set configuration
+    const configuration = {
+      method: "post",
+      url: "http://localhost:2000/auth/register",
+      data: {
+        name,
+        email,
+        password,
+      },
+    };
+    axios(configuration)
+      .then((result) => {
+        setRegister(true);
+      })
+      .catch((error) => {
+        error = new Error();
+      });
+    // prevent the form from refreshing the whole page
+    e.preventDefault();
+  };
+
   return (
     <>
       <section className="bg-gray-50 dark:bg-gray-900">
@@ -22,7 +50,11 @@ export default function Register() {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-black md:text-2xl dark:text-white">
                 Create to Your account
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+              <form
+                className="space-y-4 md:space-y-6"
+                action="#"
+                onSubmit={(e) => handleSubmit(e)}
+              >
                 <div>
                   <label
                     htmlFor="name"
@@ -34,6 +66,8 @@ export default function Register() {
                     type="text"
                     name="name"
                     id="mane"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     className="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="username"
                     required
@@ -50,6 +84,8 @@ export default function Register() {
                     type="email"
                     name="email"
                     id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="name@email.com"
                     required
@@ -66,6 +102,8 @@ export default function Register() {
                     type="password"
                     name="password"
                     id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
@@ -101,6 +139,7 @@ export default function Register() {
                 <button
                   type="submit"
                   className="my-6 bg-blue-600 w-full text-white font-medium rounded-lg p-2 text-center"
+                  onClick={(e) => handleSubmit(e)}
                 >
                   Log in
                 </button>
@@ -114,6 +153,14 @@ export default function Register() {
                     &nbsp;Sign in
                   </Link>
                 </p>
+                {/* display success message */}
+                {register ? (
+                  <p className="text-success">
+                    You Are Registered Successfully
+                  </p>
+                ) : (
+                  <p className="text-danger">You Are Not Registered</p>
+                )}
               </form>
             </div>
           </div>
