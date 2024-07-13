@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { data } from "autoprefixer";
 
 export default function Signin() {
   const [email, setEmail] = useState("");
@@ -22,10 +21,10 @@ export default function Signin() {
     };
     axios(configuration)
       .then((result) => {
-        console.log(result);
+        setLogin(true);
       })
       .catch((error) => {
-        console.log(error);
+        error = new Error();
       });
   };
 
@@ -133,6 +132,12 @@ export default function Signin() {
                   &nbsp;Sign up
                 </Link>
               </p>
+              {/* display success message */}
+              {login ? (
+                <p className="text-success">You Are Logged in Successfully</p>
+              ) : (
+                <p className="text-danger">You Are Not Logged in</p>
+              )}
             </form>
           </div>
         </div>

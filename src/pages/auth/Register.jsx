@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Result } from "postcss";
 
 export default function Register() {
   const [name, setName] = useState("");
