@@ -1,4 +1,4 @@
-import { axiosInstance } from "./index";
+import { axiosInstance } from ".";
 import { useQuery, useMutation } from "@tanstack/react-query";
 
 export const useFetchRoom = () => {

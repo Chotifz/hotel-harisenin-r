@@ -9,7 +9,6 @@ import ServiceOnRequest from "../pages/services/ServiceOnRequest";
 import About from "../pages/About";
 import Rooms from "../pages/rooms";
 import RoomDetail from "../pages/rooms/RoomDetail";
-import Bookings from "../pages/rooms/Booking";
 import Contact from "../pages/contact";
 import Signin from "../pages/auth/Signin";
 import Register from "../pages/auth/Register";
@@ -34,10 +33,7 @@ export const router = createBrowserRouter([
         path: "/rooms/:id",
         element: <RoomDetail />,
       },
-      {
-        path: "/rooms/:id/booking",
-        element: <Bookings />,
-      },
+
       {
         path: "/services",
         element: <Services />,

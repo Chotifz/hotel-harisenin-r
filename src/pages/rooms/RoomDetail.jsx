@@ -1,19 +1,26 @@
-import React from "react";
+import { useFormik } from "formik";
 import { useParams } from "react-router-dom";
+import { Skeleton } from "./components/Skeleton";
 import { useFetchRoomById } from "../../api/useRooms";
 import { useCreateBooking } from "../../api/useBooking";
-import { Skeleton } from "./components/Skeleton";
-import { useFormik } from "formik";
+import { useFetchRoomDetailById } from "../../api/useRoomDetails";
 
 export default function RoomDetail() {
   const { id } = useParams();
-  const { data, isLoading, isError } = useFetchRoomById(id);
 
-  const { mutate: createBooking } = useCreateBooking({
-    onSuccess: () => {
-      alert("Booking successful!");
-    },
-  });
+  const {
+    data: roomData,
+    isLoading: isLoadingRoom,
+    isError: isErrorRoom,
+  } = useFetchRoomById(id);
+
+  const {
+    data: roomDetailsData,
+    isLoading: isLoadingRoomDetails,
+    isError: isErrorRoomDetails,
+  } = useFetchRoomDetailById(id);
+
+  const { mutate: createBooking } = useCreateBooking();
 
   const formik = useFormik({
     initialValues: {
@@ -24,21 +31,20 @@ export default function RoomDetail() {
     },
     onSubmit: (values) => {
       const bookingData = {
-        roomId: id,
+        roomId: parseInt(id),
         customerName: values.customerName,
-        startDate: new Date(values.startDate),
-        endDate: new Date(values.endDate),
+        startDate: values.startDate,
+        endDate: values.endDate,
       };
-
-      console.log(bookingData);
       createBooking(bookingData);
     },
   });
 
-  if (isLoading) return <Skeleton />;
-  if (isError) return <div>Error loading room details</div>;
+  if (isLoadingRoom || isLoadingRoomDetails) return <Skeleton />;
+  if (isErrorRoom || isErrorRoomDetails) return <div>Server Error</div>;
 
-  const room = data?.data;
+  const room = roomData?.data;
+  const roomDetails = roomDetailsData?.data;
 
   return (
     <div className="bg-slate-50">
@@ -58,13 +64,34 @@ export default function RoomDetail() {
             <div>
               <h2 className="text-2xl font-bold mb-8">{room.name}</h2>
               <p className="mb-5 text-sm">{room.description}</p>
-              <p className="mb-5 text-sm">Price: ${room.price}</p>
+              <p className="mb-5 text-sm">Price: IDR {room.price}</p>
               <p className="mb-5 text-sm">
                 Availability:{" "}
                 {room.availability ? "available" : "not available"}
               </p>
             </div>
             <div>
+              {roomDetails ? (
+                <div className="mb-8">
+                  <h3 className="text-xl font-semibold mb-4">
+                    Facilities Offered
+                  </h3>
+                  <p className="mb-2 text-sm">
+                    Max Guests: {roomDetails.maxGuest}
+                  </p>
+                  <p className="mb-2 text-sm">
+                    Number of Beds: {roomDetails.n_beds}
+                  </p>
+                  <p className="mb-2 text-sm">
+                    Features: {roomDetails.feature}
+                  </p>
+                  <p className="mb-2 text-sm">
+                    Amenities: {roomDetails.amenities}
+                  </p>
+                </div>
+              ) : (
+                <div>No room details available</div>
+              )}
               <form onSubmit={formik.handleSubmit} className="space-y-4">
                 <div>
                   <label

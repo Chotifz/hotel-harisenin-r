@@ -22,15 +22,19 @@ export default function Rooms() {
           Explore
         </h1>
         <div className="max-m[70%] h-full flex flex-wrap mx-8 justify-center gap-8 pb-20">
-          {data?.data.map((room) => (
-            <CardRoom
-              key={room.id}
-              id={room.id}
-              name={room.name}
-              description={room.description}
-              image={room.image}
-            />
-          ))}
+          {data.data ? (
+            data.data.map((room) => (
+              <CardRoom
+                key={room.id}
+                id={room.id}
+                name={room.name}
+                description={room.description}
+                image={room.image}
+              />
+            ))
+          ) : (
+            <div>No rooms available</div>
+          )}
         </div>
       </section>
     </div>
